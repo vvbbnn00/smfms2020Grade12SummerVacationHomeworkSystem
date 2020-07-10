@@ -1,0 +1,63 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="ServerURL" Description="将要连接的服务器IP地址" Type="System.String" Scope="User">
+      <Value Profile="(Default)">vvbbnn00.cn</Value>
+    </Setting>
+    <Setting Name="Title" Description="任务系统的标题" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2020暑假作业任务系统</Value>
+    </Setting>
+    <Setting Name="TopMost" Description="窗体始终在其他应用之前" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="BackGround" Description="开启背景" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="BackType" Description="背景形式（Default-默认；Pure-纯色；Img-自定义图片）" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Default</Value>
+    </Setting>
+    <Setting Name="BackColor" Description="决定纯色背景的颜色" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Blue</Value>
+    </Setting>
+    <Setting Name="BackImgPath" Description="决定自定义图片的路径" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Null</Value>
+    </Setting>
+    <Setting Name="ExpireDate" Description="任务截止日期时间" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2020-08-31</Value>
+    </Setting>
+    <Setting Name="Subjects" Description="决定不同选科的不同作业" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DebugMode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TimerFrequency" Type="System.String" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="FinishedColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Lime</Value>
+    </Setting>
+    <Setting Name="UnfinishedColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="NotificationColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Yellow</Value>
+    </Setting>
+    <Setting Name="Opacity" Type="System.String" Scope="User">
+      <Value Profile="(Default)">80</Value>
+    </Setting>
+    <Setting Name="ShowMusicForm" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UnfinishedFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">微软雅黑, 10.5pt, style=Bold</Value>
+    </Setting>
+    <Setting Name="FinishedFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">微软雅黑, 10.5pt</Value>
+    </Setting>
+    <Setting Name="NotificationFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">微软雅黑, 10.5pt</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
