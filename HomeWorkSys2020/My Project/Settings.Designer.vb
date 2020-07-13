@@ -92,7 +92,7 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Configuration.SettingsDescriptionAttribute("窗体始终在其他应用之前"),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
         Public Property TopMost() As Boolean
             Get
                 Return CType(Me("TopMost"),Boolean)
@@ -124,7 +124,7 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Configuration.SettingsDescriptionAttribute("背景形式（Default-默认；Pure-纯色；Img-自定义图片）"),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Default")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property BackType() As String
             Get
                 Return CType(Me("BackType"),String)
@@ -284,7 +284,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("微软雅黑, 10.5pt, style=Bold")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("微软雅黑, 12pt, style=Bold")>  _
         Public Property UnfinishedFont() As Global.System.Drawing.Font
             Get
                 Return CType(Me("UnfinishedFont"),Global.System.Drawing.Font)
@@ -296,7 +296,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("微软雅黑, 10.5pt")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("微软雅黑, 12pt")>  _
         Public Property FinishedFont() As Global.System.Drawing.Font
             Get
                 Return CType(Me("FinishedFont"),Global.System.Drawing.Font)
@@ -308,7 +308,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("微软雅黑, 10.5pt")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("微软雅黑, 12pt")>  _
         Public Property NotificationFont() As Global.System.Drawing.Font
             Get
                 Return CType(Me("NotificationFont"),Global.System.Drawing.Font)

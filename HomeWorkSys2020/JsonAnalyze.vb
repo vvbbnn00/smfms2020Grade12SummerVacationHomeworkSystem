@@ -10,7 +10,7 @@ Module JsonAnalyze
         '总数统计体现
         '换行符使用\n表示
         '默认路径为APP目录下\Data\Works.json
-        'Dim path As String = Application.StartupPath + "\Data\Works.json"
+        'Dim path As String = Application.UserAppDataPath + "\Data\Works.json"
         Dim Sampletask As New tsklist
         Dim Subject, Task As Long
         Dim rand = New System.Random()
@@ -30,7 +30,7 @@ Module JsonAnalyze
     ''' <param name="Json"></param>
     Public Sub AnalyzeJson(Json As String)
         Try
-            FrmMain.cls()
+            FrmMain.Cls()
             FrmMain.Global_Progress = 0
             FrmMain.Global_Total = 0
             Dim jsonResult As Dictionary(Of String, Object)
@@ -61,8 +61,8 @@ Module JsonAnalyze
             Next
             DbP("------------------")
         Catch e As Exception
-            Log.fatal(e.Message)
-            MsgBox("解析作业文件时出现错误" + vbCrLf + e.Message, vbObjectError, "错误")
+            Log.Fatal(e.Message)
+            MsgBox("解析作业文件时出现错误" + vbCrLf + e.Message, vbCritical, "错误")
         End Try
     End Sub
 End Module

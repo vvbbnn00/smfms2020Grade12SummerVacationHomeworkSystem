@@ -14,7 +14,7 @@
             MyShortcut = WshShell.CreateShortcut(strDesktop + "\" + My.Settings.Title + ".lnk") '此处为快捷名称
             MyShortcut.TargetPath = Application.ExecutablePath  '此处为源文件
             'MyShortcut.IconLocation '此处为快捷图标,默认为应用程序的图标
-            MyShortcut.WorkingDirectory = Application.StartupPath  '工作目录
+            MyShortcut.WorkingDirectory = Application.UserAppDataPath  '工作目录
             MyShortcut.Description = "点击以启动" + My.Settings.Title '备注
             'MyShortcut.Hotkey = "ALT+CTRL+A" '此处为快捷热键
             MyShortcut.Save
@@ -34,13 +34,13 @@
             lbl_Progress.Text = "网络连接正常"
             Log.Info("网络连接正常")
             Try
-                Kill(Application.StartupPath + "\Download\nettest")
+                Kill(Application.UserAppDataPath + "\Download\nettest")
             Catch ex As Exception
                 Log.Error(ex.Message)
             End Try
             Try
-                My.Computer.Network.DownloadFile("http://" + My.Settings.ServerURL + "/Homewksys/nettest.txt", Application.StartupPath + "\Download\nettest")
-                If IO.File.ReadAllText(Application.StartupPath + "\Download\nettest") = "OK" Then
+                My.Computer.Network.DownloadFile("http://" + My.Settings.ServerURL + "/Homewksys/nettest.txt", Application.UserAppDataPath + "\Download\nettest")
+                If IO.File.ReadAllText(Application.UserAppDataPath + "\Download\nettest") = "OK" Then
                     offline = False
                     Log.Info("成功从服务器返回数据")
                 Else
@@ -48,7 +48,7 @@
                     Log.Error("从服务器返回数据失败")
                 End If
                 Try
-                    Kill(Application.StartupPath + "\Download\nettest")
+                    Kill(Application.UserAppDataPath + "\Download\nettest")
                 Catch ex As Exception
                     Log.Error(ex.Message)
                 End Try
@@ -67,20 +67,20 @@
         Dim subs(), choice, ans As String
         lbl_Progress.Text = "检查任务文件是否存在..."
         Log.Info("检查任务文件是否存在...")
-        If System.IO.File.Exists(Application.StartupPath + "\Data\Works.json") = False Then
+        If System.IO.File.Exists(Application.UserAppDataPath + "\Data\Works.json") = False Then
             If offline = False Then
-                lbl_Progress.Text = "创建桌面快捷方式..."
-                CreateDesktopShortcut()
+                'lbl_Progress.Text = "创建桌面快捷方式..."
+                'CreateDesktopShortcut()
                 lbl_Progress.Text = "任务文件不存在，正在从互联网中获取..."
                 Log.Info("任务文件不存在，正在从互联网中获取...")
                 Try
-                    Kill(Application.StartupPath + "\Download\SubjectList.txt")
+                    Kill(Application.UserAppDataPath + "\Download\SubjectList.txt")
                 Catch exc As Exception
                     Log.Error(exc.Message)
                 End Try
                 Try
-                    Log.Info("http://" + My.Settings.ServerURL + "/Homewksys/SubjectList.txt->" + Application.StartupPath + "\Download\SubjectList.txt")
-                    My.Computer.Network.DownloadFile("http://" + My.Settings.ServerURL + "/Homewksys/SubjectList.txt", Application.StartupPath + "\Download\SubjectList.txt")
+                    Log.Info("http://" + My.Settings.ServerURL + "/Homewksys/SubjectList.txt->" + Application.UserAppDataPath + "\Download\SubjectList.txt")
+                    My.Computer.Network.DownloadFile("http://" + My.Settings.ServerURL + "/Homewksys/SubjectList.txt", Application.UserAppDataPath + "\Download\SubjectList.txt")
                 Catch exc As Exception
                     Log.Fatal(exc.Message)
                     MsgBox("程序遇到致命错误，请联系开发者1398456099" + vbCrLf + exc.Message, vbCritical)
@@ -88,7 +88,7 @@
                 End Try
                 Log.Info("选科列表获取成功,请选择您的选科。")
                 lbl_Progress.Text = "选科列表获取成功,请选择您的选科。"
-                subs = IO.File.ReadAllLines(Application.StartupPath + "\Download\SubjectList.txt")
+                subs = IO.File.ReadAllLines(Application.UserAppDataPath + "\Download\SubjectList.txt")
                 Dim i
                 For i = 1 To subs.Count
                     FrmChooseSubject.ComboBox1.Items.Add(subs(i - 1))
@@ -115,13 +115,13 @@ CS:             FrmChooseSubject.ShowDialog()
                 Log.Info("下载对应选科文件...")
                 lbl_Progress.Text = "下载对应选科文件..."
                 Try
-                    Kill(Application.StartupPath + "\Data\Works.json") '\" & ans & ".json")
+                    Kill(Application.UserAppDataPath + "\Data\Works.json") '\" & ans & ".json")
                 Catch exc1 As Exception
                     DbP(exc1.Message)
                     Log.Error(exc1.Message)
                 End Try
                 Try
-                    My.Computer.Network.DownloadFile("http://" + My.Settings.ServerURL + "/Homewksys/" & ans & ".json", Application.StartupPath + "\Data\Works.json")
+                    My.Computer.Network.DownloadFile("http://" + My.Settings.ServerURL + "/Homewksys/" & ans & ".json", Application.UserAppDataPath + "\Data\Works.json")
                 Catch exc2 As Exception
                     Log.Fatal(exc2.Message)
                     MsgBox("程序遇到致命错误，请联系开发者1398456099" + vbCrLf + exc2.Message, vbCritical)

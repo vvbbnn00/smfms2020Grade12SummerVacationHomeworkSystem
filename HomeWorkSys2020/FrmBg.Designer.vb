@@ -30,6 +30,7 @@ Partial Class FrmBg
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.HomeWorkSys2020.My.Resources.Resources.back
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1205, 678)
         Me.ControlBox = False
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -38,7 +39,7 @@ Partial Class FrmBg
         Me.MinimizeBox = False
         Me.Name = "FrmBg"
         Me.ShowInTaskbar = False
-        Me.Text = "FrmBg"
+        Me.Text = "背景窗体"
         Me.ResumeLayout(False)
 
     End Sub

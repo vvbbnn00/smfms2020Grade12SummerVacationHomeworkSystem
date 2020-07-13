@@ -22,9 +22,11 @@ Partial Class FrmMusic
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMusic))
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
-        Me.SuspendLayout
+        Me.timer_RunOnce = New System.Windows.Forms.Timer(Me.components)
+        Me.SuspendLayout()
         '
         'WebBrowser1
         '
@@ -35,19 +37,22 @@ Partial Class FrmMusic
         Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(408, 445)
+        Me.WebBrowser1.Size = New System.Drawing.Size(404, 441)
         Me.WebBrowser1.TabIndex = 0
         Me.WebBrowser1.TabStop = False
         Me.WebBrowser1.WebBrowserShortcutsEnabled = False
+        '
+        'timer_RunOnce
+        '
+        Me.timer_RunOnce.Interval = 1
         '
         'FrmMusic
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(408, 445)
+        Me.ClientSize = New System.Drawing.Size(404, 441)
         Me.ControlBox = False
         Me.Controls.Add(Me.WebBrowser1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -58,4 +63,5 @@ Partial Class FrmMusic
 
     End Sub
     Friend WithEvents WebBrowser1 As WebBrowser
+    Friend WithEvents timer_RunOnce As Timer
 End Class
